@@ -1,0 +1,13 @@
+<div class="applications-container">
+    <div class="title-style">Applications</div>
+    <br>
+    <div class="application-card-container">
+       <div class="application-card-style" *ngFor="let app of applicationsList;let i">
+          <p-card (click)="redirectToApplication(app?.applicationURL)" [styleClass]="'card-style'" [header]="app.applicationName">
+         {{app.applicationDescription}}</p-card>
+ 
+       </div>
+ 
+ 
+    </div>
+ </div>

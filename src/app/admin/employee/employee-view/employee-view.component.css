@@ -1,0 +1,22 @@
+@import '/src/styles.css';
+
+.view-employee-cotainer {
+    padding: 3rem;
+}
+
+.title-style {
+    text-align: left;
+
+}
+
+.view-page-button-container {
+    display: flex;
+}
+
+.button-position {
+    margin: 1rem;
+}
+
+.view-button-style {
+    width: 6rem;
+}

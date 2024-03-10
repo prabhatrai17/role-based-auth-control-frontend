@@ -1,0 +1,11 @@
+<aside class="sidebar-style ">
+    <div class="menu-container">
+            <div *ngFor="let param of sideBarParameters;let ind=index">
+                <div [ngClass]="param?.active ?'menu-element-active':''" (click)="elementClick(param?.name,ind)" class="menu-element">
+                    <i [ngClass]="param.icon" class="navbar-icon">
+                    </i>
+                    <span class="element-label">{{param.label}}</span>
+                </div>
+            </div>
+        </div>
+    </aside>

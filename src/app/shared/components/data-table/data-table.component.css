@@ -1,0 +1,41 @@
+@import '/src/styles.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:host ::ng-deep .p-datatable.p-datatable-striped .p-datatable-tbody>tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+:host ::ng-deep .p-datatable.p-datatable-striped .p-datatable-tbody>tr {
+    color: black;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    /* background-color: #92c8ff; */
+    background-color:rgba(67, 64, 64, 0.418)
+}
+
+:host ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    padding: 0.5rem 0.5rem;
+}
+
+:host ::ng-deep .p-dropdown-items-wrapper ul {
+    padding-left: 0rem !important;
+    width: 100%;
+
+}
+
+:host ::ng-deep .p-dropdown-items {
+    padding-left: 0rem;
+}
+
+::ng-deep .p-dropdown-items-wrapper ul {
+    padding-left: 0rem;
+}
+.table-action-button{
+    width: 4.8rem;
+    margin-right: 12px;
+    margin-bottom: 10px;
+}

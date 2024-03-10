@@ -1,0 +1,8 @@
+<div class="profile-table-container">
+    <div class="title-style container">Profiles Table
+        <button *ngIf="!config?.data" (click)="createProfile()" class="btn btn-dark  create-role">
+            Create profile</button>
+    </div>
+    <app-data-table (buttonClickEmitter)="buttonClickMethod($event)" [columns]="profileColumns"
+        [pData]="profilesData"></app-data-table>
+</div>

@@ -1,0 +1,58 @@
+<div class="container">
+  <p-table [columns]="columns" selectionMode="single" [(selection)]="selectedRow" styleClass="p-datatable-striped"
+    [tableStyle]="{ 'min-width': '20rem' }" [paginator]="true" [rows]="10" dataKey="" [showCurrentPageReport]="true"
+    [value]="pData" [currentPageReportTemplate]="'10'" [loading]="loading"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10, 25, 50]"
+    (onRowSelect)="rowSelect($event)">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th [style.width]="col.width" *ngFor="let col of columns" class="text-white">
+          {{ col.label }}
+        </th>
+      </tr>
+      <tr>
+        <th *ngFor="let col of columns">
+          <p-columnFilter  *ngIf="col.colType !== 'action'" [type]="col.colType" [field]="col.name">
+          </p-columnFilter>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr [pSelectableRow]="rowData">
+        <ng-container *ngFor="let col of columns">
+          <ng-container [ngSwitch]="col.colType">
+            <td style="display: flex;" *ngSwitchCase="'action'">
+              <ng-container *ngFor="let action of col.actionList">
+                <button class="btn table-action-button"
+                  [ngClass]="action.btnType === 'primary'?'btn-dark':'btn-light'"
+                  (click)="buttonClick(rowData,action.name)">{{action.label}}</button>
+              </ng-container>
+            </td>
+            <td *ngSwitchCase="'dropdown'">
+              <p-dropdown [options]="rowData[col.name]" optionLabel="roleName" appendTo="body"
+                [styleClass]="'dropdown-style'"></p-dropdown>
+            </td>
+            <td *ngSwitchDefault>{{ col.navigate ? getProfileId(rowData): rowData[col.name]}}</td>
+          </ng-container>
+          <!-- <td *ngIf="col.name !== 'action'; else actionColumn">
+            {{ rowData[col.name] }}
+          </td>
+          <ng-template #actionColumn>
+            <td >
+              <ng-container *ngFor="let action of col.actionList">
+              <button class="btn" [ngClass]="action.btnType === 'primary'?'btn-primary':'btn-danger'"
+                (click)="buttonClick(rowData,action.name)" style="margin-right: 10px;">{{action.label}}</button>
+              </ng-container>
+            </td> -->
+
+          <!-- </ng-template> -->
+        </ng-container>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="5">No data found.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

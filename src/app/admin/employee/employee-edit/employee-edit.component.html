@@ -1,0 +1,64 @@
+<div class="container employee-edit-container">
+    <div class="title-style">Edit Employee</div>
+    <div class="form-container">
+        <div class="employee-details">
+
+            <form class="formGroup" [formGroup]="editFormData">
+
+                <div class="row">
+                    <div class="title-style">Employee Details</div>
+                    <div class="col">
+                        <label class="col-form-label"><b>User ID</b></label>
+                        <span class="form-control">{{ editFormData.get('userId')?.value }}</span>
+                    </div>
+                    <div class="col">
+                        <label class="col-form-label"><b>Username</b></label>
+                        <span class="form-control">{{editFormData.get('username').value}} </span>
+                    </div>
+                    <div class="col">
+                        <label class="col-form-label"><b>Email</b></label>
+                        <span class="form-control">{{editFormData.get('email').value}} </span>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="section-container">
+                        <div class="title-style">Profile Details</div>
+
+                        <button class="btn-primary btn" (click)="profileDialog()">
+                            {{editFormData.get('profileId')?.value > 0 ?'Change profile ':'Add profile'}}</button>
+
+                    </div>
+                    <div *ngIf="profileData !== null" class="profile-details-style">
+                        <div class="col">
+                            <label class="col-form-label"><b>Profile name</b></label>
+                            <div class="col-form-label">{{profileData?.profileName}} </div>
+                        </div>
+                        <div class="col">
+                            <label class="col-form-label"><b>Profile decription</b></label>
+                            <div class="col-form-label">{{profileData?.profileDescription}} </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="title-style">Role Details</div>
+                        <app-data-table [rowSelectEnable]="false" [columns]="rolesColumns"
+                            [pData]="rolesData"></app-data-table>
+                    </div>
+
+
+                </div>
+                <div class="form-btn-container">
+                    <div class="btn-position">
+                        <button class="btn btn-primary passive-button" (click)="redirectToListPage()">Cancel</button>
+
+                    </div>
+                    <div class="btn-position">
+                        <app-spin-button [isSpinnerActive]="isSpinnerActive" (buttonEmitter)="submit()"
+                            [buttonLabel]="'Submit'"> </app-spin-button>
+
+                    </div>
+                    <!-- <button class="btn btn-primary" (click)="submit()">Submit</button> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

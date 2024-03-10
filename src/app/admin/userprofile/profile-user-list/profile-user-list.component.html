@@ -1,0 +1,35 @@
+<h2 class="text-center mt-5">{{profileName}}</h2>
+
+<a class="btn btn-secondary" [routerLink]="['/admin/updateUserProfile']" (click)="sendProfileName()" role="button">Add User to {{profileName}}</a>
+
+<!-- <button type="button" class="btn btn-secondary" (click)="sendProfileName()">Add {{profileName}} Profile</button> -->
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> User Name </th>
+            <th> Role </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <ng-container *ngFor="let userProfile of userProfiles"> -->
+            <tr *ngFor="let user of userProfiles?.users">
+                <!-- <ng-container *ngFor="let user of userProfile.users">
+                    <td> {{user.firstName}} {{ user.lastName }}</td>
+                    <td> {{ user.username }}</td>
+                </ng-container>  -->
+                 
+                <td>{{user.email}} </td>
+                <td> {{ user.username }}</td>
+                <td> {{getJoinedRoleNames(userProfiles.profile)}}</td>
+                <td>
+                    <button (click)="deleteUserAssociatedWithProfile(user.userId)" class="btn btn-danger">DELETE</button>
+                </td>
+                 
+            </tr>
+        <!-- </ng-container> -->
+    </tbody>
+</table> 
+

@@ -1,0 +1,4 @@
+<div class="container employee-table-container">
+    <div class="title-style">Employees Table</div>
+    <app-data-table [rowSelectEnable]="true" [columns]="userListColumns" [uniqueId]="'employeeId'" [pData]="userData" (buttonClickEmitter)="buttonClickMethod($event)"></app-data-table>
+</div>

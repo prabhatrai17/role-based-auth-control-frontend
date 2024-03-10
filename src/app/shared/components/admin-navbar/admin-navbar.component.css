@@ -1,0 +1,45 @@
+.sidebar-style {
+    top: 0;
+   left: 0;
+   height: 100%;
+   width: 200px;
+   position: fixed;
+   background-color: #414245d3;
+   color: #fff;
+    padding-top: 20px;
+}
+
+.navbar-icon {
+   font-size: 25px;
+}
+
+.menu-container {
+   width: 100%;
+   margin-top: 5.125rem;
+}
+
+.element-label {
+   margin-left: 10px;
+   font-style: normal;
+   font-weight: 600;
+   margin-top: 5px;
+
+}
+
+.menu-element {
+   display: block;
+   padding: 10px 10px 10px 10px;
+   cursor: pointer;
+   display: flex;
+   width: 100%;
+}
+
+.menu-element-active {
+   color: black;
+   background-color: white;
+}
+
+.menu-element:hover {
+   color: black;
+   background-color: white;
+}

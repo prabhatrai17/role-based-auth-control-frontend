@@ -1,0 +1,15 @@
+
+
+<div class="dashboard-card-container ">
+    <div class="dashboard-card" *ngFor="let profile of profiles">
+        <button type="button" (click)="onProfileClick(profile.profileName)">
+            <p-card class="dashboard-card-class" [header]="profile.profileName">
+                <!-- <div class="card-content col">
+                    <i [class]="bi bi person"></i>
+                </div> -->
+            </p-card>
+        </button>
+    </div>
+    
+</div>
+

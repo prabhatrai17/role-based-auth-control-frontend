@@ -1,0 +1,54 @@
+@import '/src/styles.css';
+
+.employee-edit-container {
+    padding: 3rem;
+    margin-left: 10px;
+}
+
+.title-style {
+    text-align: left;
+
+}
+
+.section-container {
+    display: inline;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.section-container button {
+    float: right;
+    display: inline;
+    justify-content: right;
+}
+
+.section-container .title-style {
+    display: inline;
+}
+
+.btn-container {
+    display: inline;
+    float: right;
+}
+
+.form-btn-container {
+    float: right;
+    display: inline-flex;
+}
+
+.form-btn-container button {
+    margin-right: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 5rem;
+    height: 2.7rem;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn-position {
+    margin: 1rem;
+}
+.change-profile-btn{
+    padding-bottom: 10px;
+}

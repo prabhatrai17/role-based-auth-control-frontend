@@ -1,0 +1,8 @@
+@import '/src/styles.css';
+.employee-table-container {
+    padding: 3rem;
+}
+.title-style {
+    text-align: left;
+    padding-bottom: 10px;
+}

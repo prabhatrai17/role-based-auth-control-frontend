@@ -1,0 +1,43 @@
+<div class="create-role-container container">
+    
+
+    <mat-card class="mat-card">
+      <mat-card-header class="card-head-foot">
+        <mat-card-title>Add New Roles</mat-card-title>
+        <mat-card-subtitle>Enter role details</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <form #addRoleForm="ngForm" class="add-form" (ngSubmit)="onSubmit(addRoleForm)">
+         
+          <mat-form-field class="example-full-width">
+            <mat-label>Role Name</mat-label>
+            <input type="text" matInput placeholder="Enter Role Name" name="roleName" (change)="onChange()" [value]="roleNewObj.roleName" [(ngModel)]="roleNewObj.roleName" pattern="^[A-Za-z][A-Za-z_]+$" [minlength]="3" [maxlength]="20" required>
+            <mat-hint>Required</mat-hint>
+            <mat-error>
+               Min length 3, Max 20 , should contain only alphabets or '_'
+            </mat-error>
+          </mat-form-field><br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Role Desc</mat-label>
+            <input type="text" matInput placeholder="Enter Role Desc" name="roleDesc" (change)="onChange()" [value]="roleNewObj.roleDescription" [(ngModel)]="roleNewObj.roleDescription" minlength="5" maxlength="50" required>
+            <mat-hint>Required</mat-hint>
+            <mat-error>
+              Min length 5, Max is 50 
+            </mat-error>
+          </mat-form-field>
+  
+  
+  
+          
+  
+          <mat-card-actions class="card-head-foot">
+            <button type="submit" [disabled]="addRoleForm.invalid" mat-flat-button color="primary" class="btn" type="submit">Submit</button>
+            <button  mat-stroked-button color="accent" (click)="redirectToList()">Cancel</button>
+          </mat-card-actions>
+  
+        </form>
+      </mat-card-content>
+     <h4 *ngIf="invalidInputGiven" class="center-error">invalid Input Given</h4>
+    </mat-card>
+  
+  </div>

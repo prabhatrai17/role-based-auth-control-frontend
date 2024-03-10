@@ -1,0 +1,64 @@
+<div class="container register-container mt-5">
+    <form [formGroup]="registrationForm">
+        <div class="row">
+            <div class="user-icon"><i class="bi bi-person-plus"></i></div>
+            <div class="title-style">User Registration</div>
+            <div class="mb-3">
+                <input placeholder="Email" type="email" id="email" formControlName="email" class="form-control"
+                    required>
+                <div *ngIf="registrationForm.get('email')?.touched && registrationForm.get('email')?.errors"
+                    class="error-text">
+                    {{ registrationForm.get('email')?.touched && !registrationForm.get('email')?.value ?
+                    " Email is required":"Enter Valid Email"}}
+                </div>
+            </div>
+            <div class="mb-3">
+                <input placeholder="Name" id="username" formControlName="username" class="form-control" required>
+                <div *ngIf="registrationForm.get('username')?.touched && registrationForm.get('username')?.errors"
+                    class="error-text">
+                    Name is required
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3">
+                <input placeholder="Enter password" [type]="isPasswordVisible ?'text':'password'" id="password"
+                    formControlName="password" class="form-control" required>
+                <span class="eye-holder">
+                    <i class=" eye-icon " (mousedown)="passwordVisiblityChanger('password')"
+                        [class]="isPasswordVisible ? 'bi bi-eye-fill':'bi bi-eye-slash-fill'"
+                        (mouseup)="passwordVisiblityChanger('password')"></i></span>
+                <span class="decision-icon-style">
+                    <i class="bi"
+                        [ngClass]="{'text-success bi-check-circle': isPasswordValid(), 'text-danger bi-x-circle': !isPasswordValid()}"></i>
+                </span>
+                <small class="form-text text-muted">Password should have minimum 8 characters and at least one
+                    capital
+                    letter, one small letter,
+                    and
+                    one symbol.</small>
+            </div>
+            <div class="col">
+                <input [type]="isConfirmPasswordVisible ?'text':'password'" id="confirmPassword"
+                    formControlName="confirmPassword" class="form-control" placeholder="Confirm password" required>
+                <span class="eye-holder">
+                    <i class=" eye-icon " [ngClass]="isConfirmPasswordVisible?' bi bi-eye-fill':'bi bi-eye-slash-fill'"
+                        (mousedown)="passwordVisiblityChanger('confirmPassword')"
+                        (mouseup)="passwordVisiblityChanger('confirmPassword')"></i></span>
+                <span class="decision-icon-style">
+                    <i class="bi"
+                        [ngClass]="{'text-success bi-check-circle': isPasswordMatch(), 'text-danger bi-x-circle': !isPasswordMatch()}"></i>
+                </span> <small class="form-text text-muted">Password must match the above password.</small>
+            </div>
+        </div>
+        <div class="row">
+            <app-spin-button [buttonLabel]="'Register'" [isSpinnerActive]="isSpinnerActive"
+                [enableButton]="registrationForm.invalid || !isPasswordMatch()" (buttonEmitter)="onSubmit()">
+            </app-spin-button>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary button-style passive-button mt-2" (click)="login()">Go back to Login</button>
+        </div>
+    </form>
+    
+</div>

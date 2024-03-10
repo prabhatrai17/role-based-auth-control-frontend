@@ -1,0 +1,46 @@
+
+<div class=" add-profile-container container">
+    <mat-card class="mat-card">
+      <mat-card-header class="card-head-foot">
+        <mat-card-title>Add New Profile</mat-card-title>
+        <mat-card-subtitle>Enter your details</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <form #addForm="ngForm" class="edit-form" (ngSubmit)="onSubmit(addForm)">
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>Profile Name</mat-label>
+            <input (change)="onChange()" type="text" [value]="profileObj.profileName" name="profileName" matInput placeholder="Enter Profile Name" [(ngModel)]="profileObj.profileName"  pattern="^[A-Za-z][A-Za-z-0-9\s]+$"  [minlength]="3" [maxlength]="20" required>
+            <mat-hint>Required</mat-hint>
+            <mat-error>
+              Min length 3, Max 30 ,should contain only alphanumeric characters or '-'
+            </mat-error>
+          </mat-form-field><br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Profile Desc</mat-label>
+            <input type="text" (change)="onChange()" [value]="profileObj.profileDescription" name="profileDescription" matInput placeholder="Enter Profile Desc" [(ngModel)]="profileObj.profileDescription"  
+           [minlength]="5" [maxlength]="50" required>
+            <mat-hint>Required</mat-hint>
+          <mat-error>
+            Min length 3, Max 50 
+          </mat-error>
+          
+          </mat-form-field>
+  
+  
+  
+          <section class="role-section">
+            <mat-checkbox (change)="onChange()" *ngFor="let role of finalRoleDtoToShow"  name="{{role.name}}"   class="example-margin" [(ngModel)]="role.checked">{{role.name}} </mat-checkbox>
+          </section>
+  
+          <mat-card-actions class="card-head-foot">
+            <button [disabled]="addForm.invalid" mat-flat-button color="primary" class="btn" >Submit</button>
+            <button (click)="redirectToList()" type="submit" mat-stroked-button color="accent">Cancel</button>
+          </mat-card-actions>
+  
+        </form>
+      </mat-card-content>
+     
+    </mat-card>
+  
+  </div>

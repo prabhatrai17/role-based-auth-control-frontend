@@ -1,0 +1,39 @@
+<section class="container" [ngClass]="formStatus">
+    <header class="text-center  mt-5 ">User Profile Form</header>
+  
+    <form class="form" [formGroup]="reactiveForm" (ngSubmit)="OnFormSubmitted()">
+      <div class="input-box">
+        <input type="text" formControlName="profile" readonly />
+      </div>
+      <div class="input-box" formArrayName="users">
+        <div class="user" *ngFor="let control of reactiveForm.get('users')['controls']; let in = index" [formGroupName]="in">
+            <label>USER {{in + 1}}</label>
+            <div class="column">
+                <div class="input-box">
+                    <input type="text" placeholder="UserName" formControlName="username" (input)="onInputChange(in)"/> 
+                    <ul *ngIf="filteredOptions.length > 0;">
+                      <li *ngFor="let option of filteredOptions" (click)="selectOption(option,in)">{{ option.username }}</li>
+                    </ul>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Email" formControlName="email" /> 
+                </div>
+            </div>
+            
+            <div class="input-box">
+              <input type="hidden" placeholder="UserID" formControlName="userid" /> 
+            </div>
+            <button type="button" class="btn-add-delete" (click)="deleteUser(in)">
+                Delete User
+              </button>          
+        </div>
+      </div>
+      <button type="button" class="btn-add-delete" (click)="addUser()">
+        Add User
+      </button>
+
+      <input type="submit" value="Submit" class="submit-btn">
+      <!-- [disabled]="!reactiveForm.valid" -->
+    </form>
+  </section>
+ 

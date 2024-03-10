@@ -1,0 +1,7 @@
+@import '/src/styles.css';
+.dialog-button-container {
+    float: right;
+}
+:host ::ng-deep .p-dialog .p-dialog-header {
+    border-bottom: 1px solid #c7c7c7;
+}

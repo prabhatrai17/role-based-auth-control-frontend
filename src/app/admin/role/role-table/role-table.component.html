@@ -1,0 +1,7 @@
+<div class="role-table-container">
+    <div class="title-style container">Roles Table
+        <button class="btn btn-dark create-role" (click)="createRole()"> Create role</button>
+    </div>
+
+    <app-data-table (buttonClickEmitter)="buttonClickMethod($event)" [loading]="loadData" [columns]="roleColumns" [pData]="rolesData"></app-data-table>
+</div>

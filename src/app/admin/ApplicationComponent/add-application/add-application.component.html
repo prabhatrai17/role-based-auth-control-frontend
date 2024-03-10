@@ -1,0 +1,37 @@
+<div class="background">
+    <div class="container">
+            <h2>Application Details Form</h2>
+            <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="applicationName">Application Name:</label>
+                <input type="text" formControlName="applicationName" class="form-control"  required />
+                <div *ngIf="applicationForm.get('applicationName').invalid && (applicationForm.get('applicationName').touched || isSubmitted)">
+                  <p class="error-message text-danger" *ngIf="applicationForm.get('applicationName').hasError('required')">Please enter application name.</p>
+                  <p class="error-message text-danger" *ngIf="applicationForm.get('applicationName').hasError('pattern')">Please enter valid name for application.</p>
+                </div>
+              </div>
+      
+              <div class="form-group">
+                <label for="applicationURL">Application URL:</label>
+                <input type="text" formControlName="applicationURL" class="form-control"  required />
+                <div *ngIf="applicationForm.get('applicationURL').invalid && (applicationForm.get('applicationURL').touched || isSubmitted)">
+                  <p class="error-message text-danger" *ngIf="applicationForm.get('applicationURL').hasError('required')">Please enter application URL.</p>
+                  <p class="error-message text-danger" *ngIf="applicationForm.get('applicationURL').hasError('pattern')">Please enter valid URL.</p>
+                </div>
+              </div>
+      
+              <div class="form-group">
+                <label for="applicationDescription">Application Description:</label>
+                <textarea formControlName="applicationDescription" class="form-control" rows="3" required></textarea>
+                <p class="error-message text-danger" *ngIf="applicationForm.get('applicationDescription').invalid && (applicationForm.get('applicationDescription').touched || isSubmitted)">Please enter description.</p>
+              </div>
+      
+              <div class="form-group text-center">
+                <button class="btn btn-primary">Add</button>
+              </div>
+            </form>
+          </div>
+        
+</div>
+  
+

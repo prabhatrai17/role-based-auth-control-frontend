@@ -1,0 +1,10 @@
+<div class="row">
+    <button type="button" class="btn btn-primary  button-style active-button" [disabled]="enableButton"
+        (click)="buttonClickEvent()">
+        {{isSpinnerActive ?'':buttonLabel}}
+        <!-- <app-spinner *ngIf="isSpinnerActive" ></app-spinner> -->
+        <div *ngIf="isSpinnerActive" class="spinner">
+            <div class="spinner-icon"></div>
+          </div>
+    </button>
+</div>

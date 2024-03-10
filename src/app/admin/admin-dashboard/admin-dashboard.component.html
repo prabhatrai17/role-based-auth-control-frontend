@@ -1,0 +1,13 @@
+<div class="container dashboard-container">
+    <div class="title-style">Welcome {{name}}!</div>
+    <div class="title-style">Admin Dashboard</div>
+    <div class="dashboard-card-container ">
+        <div class="dashboard-card" *ngFor="let item of dashboardContents">
+                <p-card (click)="navigate(item.url)" class="dashboard-card-class" [header]="item.label">
+                    <div class="card-content col">
+                        <i [class]="item.icon"></i>
+                    </div>
+                </p-card>
+        </div>
+    </div>
+</div>

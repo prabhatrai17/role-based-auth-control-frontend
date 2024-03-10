@@ -1,0 +1,108 @@
+.row {
+    width: 100%;
+}
+
+.header-style {
+    background-color: rgba(0, 0, 0, 0.484);
+    color: white;
+    display: flex;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+}
+
+.content {
+    flex: 1;
+    width: 84%;
+    margin-top: 50px;
+    position: static;
+}
+
+.large-spinner-style {
+    position: fixed;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    top: 100%;
+    left: 45%;
+    z-index: 980;
+}
+
+.sidebar-toggle-container {
+    display: none;
+}
+
+.nav-bar-style {
+    z-index: 990;
+    width: 16%;
+}
+
+.logout-style {
+    margin-left: auto;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: text-decoration 0.3s ease, transform 0.3s ease;
+}
+
+.logout-style:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+.userName-title-style {
+    float: left;
+    margin-right: auto;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.hamburger-menu {
+    color: #fff;
+    display: none;
+}
+
+/* Additional styling for responsiveness using Bootstrap classes */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+
+    .app-admin-navbar {
+        width: 100%;
+        margin-left: 0;
+        position: static;
+    }
+
+    .hamburger-menu {
+        display: block;
+        color: #fff;
+        margin: 1rem;
+
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .nav-bar-style {
+        display: none;
+    }
+
+    .sidebar-toggle-container {
+        display: inherit;
+        width: 60%;
+        margin-left: 40px;
+    }
+
+    :host ::ng-deep .p-sidebar-left {
+        /* Your custom styles here */
+        background-color: #0000;
+        width: 2rem !important;
+        /* Add more styles as needed */
+    }
+}

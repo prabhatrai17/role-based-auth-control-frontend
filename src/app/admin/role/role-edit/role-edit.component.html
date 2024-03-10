@@ -1,0 +1,49 @@
+
+<div class="container">
+    <mat-card class="mat-card">
+      <mat-card-header class="card-head-foot">
+        <mat-card-title>Edit Roles</mat-card-title>
+        <mat-card-subtitle>update role details</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <form #editRoleForm="ngForm" class="edit-form" (ngSubmit)="onSubmit(editRoleForm)">
+          <mat-form-field class="example-full-width">
+            <mat-label>Role Id</mat-label>
+            <input type="text" matInput placeholder="Id" name="roleId" [value]="roleToEdited.roleId" (change)="onChange()"  [(ngModel)]="roleToEdited.roleId" readonly>
+            <mat-hint>Role id cannot be modified</mat-hint>
+            <mat-error>
+            </mat-error>
+          </mat-form-field><br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Role Name</mat-label>
+            <input type="text" matInput placeholder="Enter Role Name" name="roleName" [value]="roleToEdited.roleName" (change)="onChange()" [(ngModel)]="roleToEdited.roleName" pattern="^[A-Za-z][A-Za-z_]+$" [minlength]="3" [maxlength]="20" required>
+            <mat-hint>Required</mat-hint>
+            <mat-error>
+              Min length 3, Max 20 ,should contain only alphabets or '_'
+            </mat-error>
+          </mat-form-field><br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Role Desc</mat-label>
+            <input type="text" matInput placeholder="Enter Role Desc" name="roleDescription" [value]="roleToEdited.roleDescription" (change)="onChange()"  [(ngModel)]="roleToEdited.roleDescription" minlength="5" maxlength="50" required>
+            <mat-hint>Required</mat-hint>
+            <mat-error>
+              Min length 5, Max is 50 
+            </mat-error>
+          </mat-form-field>
+  
+  
+  
+          
+  
+          <mat-card-actions class="card-head-foot">
+            <button type="submit" [disabled]="editRoleForm.invalid"  mat-flat-button color="primary" class="btn" type="submit">Update</button>
+            <button mat-stroked-button color="accent" (click)="redirectToList()">Cancel</button>
+          </mat-card-actions>
+  
+        </form>
+      </mat-card-content>
+     
+    </mat-card>
+  
+  </div>
+

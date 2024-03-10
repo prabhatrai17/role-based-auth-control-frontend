@@ -1,0 +1,40 @@
+<div class="login-container">
+    <div class="form-container ">
+        <div class="error-message" *ngIf="errorMessageVisiblity">{{credentialErrorMsg}}</div>
+        <form (keydown.enter)="submit()" [formGroup]="loginForm">
+            <div class="row credential-handler">
+                <div class="title-style">Login</div>
+                <div class="text-field">
+                    <input class="form-control " type="email" id="email" formControlName="email" placeholder="Email" />
+                    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors" class="error-text">
+                        {{ loginForm.get('email')?.touched && !loginForm.get('email')?.value ?
+                        " Email is required":"Enter Valid Email"}}
+                    </div>
+                </div>
+                <div class="text-field ">
+                    <input (paste)="preventPaste($event)" class="form-control text-field" placeholder="Password"
+                        [type]="!passwordVisiblity  ?'password':'text'" id="password" formControlName="password" />
+                    <span class="eye-holder"><i id='show-password' (mousedown)="passwordVisiblityChanger()"
+                            (mouseup)="passwordVisiblityChanger()"
+                            [class]="!passwordVisiblity?'bi bi-eye-slash-fill' : 'bi bi-eye-fill'"></i></span>
+                    <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors"
+                        class="error-text">
+                        Password is required
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="forgot-password-style" (click)="redirectToPasswordReset()">Forgot password ?</div>
+                </div>
+            </div>
+                <!-- <button class="btn btn-primary button-style active-button" (click)="submit()"
+                    type="submit">{{isSpinnerActive?'':'Login'}}
+                    <app-spinner [show]="isSpinnerActive"></app-spinner>
+                </button> -->
+                <app-spin-button (buttonEmitter)="submit()" [buttonLabel]="'Login'" [isSpinnerActive]="isSpinnerActive"></app-spin-button> 
+            <div class="row">
+                <button class="btn-dark  button-style passive-button" (click)="redirectToRegister()"
+                    type="button">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

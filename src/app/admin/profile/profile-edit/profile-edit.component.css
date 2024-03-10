@@ -1,0 +1,37 @@
+@import '/src/styles.css';
+
+.profile-edit-conatiner {
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 45px;;
+}
+
+.mat-card {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    border: 1px;
+    padding: 3%;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+
+}
+
+.card-head-foot {
+
+    padding-left: 30%;
+
+
+}
+
+.btn {
+    margin: 0 10px;
+}

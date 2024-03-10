@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="header-style" *ngIf="showCommonComponents">
+        <i class="bi bi-list hamburger-menu" (click)="hamburgerMenuMethod()"></i>
+
+        <!-- <div class="userName-title-style">Welcome Balaji !</div> -->
+        <!-- <a routerLink="/" class="company-title">RBAC</a> -->
+
+        <div class="logout-style" (click)="logout()">Logout </div>
+    </div>
+</div>
+<div class="row">
+    <div class="nav-bar-style" *ngIf="showCommonComponents">
+        <app-admin-navbar></app-admin-navbar>
+    </div>
+    <div class="sidebar-toggle-container" >
+        <p-sidebar [(visible)]="sideBartoggle" position="left" [dismissible]="true" [showCloseIcon]="false"
+            [styleClass]="'sidebar-toggle'">
+            <i class="bi bi-list" (click)="hamburgerMenuMethod()">q</i>
+            <app-admin-navbar></app-admin-navbar>
+        </p-sidebar>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+     <app-spinner [largeSpinner]="true"></app-spinner>
+ 

@@ -1,0 +1,49 @@
+@import '/src/styles.css';
+
+.dashboard-container {
+    padding: 2rem;
+}
+
+.dashboard-card-container {
+    display: flex;
+}
+
+.dashboard-card {
+    display: flex;
+    padding: 20px;
+}
+
+:host ::ng-deep .dashboard-card-class .p-card .p-card-title {
+    width: 10rem;
+}
+
+.card-content {
+    font-size: 30px;
+    display: flex;
+}
+
+.title-style {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.count {
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+    text-align: end;
+}
+
+.dashboard-card-class {
+    :host .p-card {
+        background-color: aqua;
+    }
+}
+
+@media (max-width:720px) {
+    .dashboard-card-container {
+        display: block;
+    }
+
+
+}

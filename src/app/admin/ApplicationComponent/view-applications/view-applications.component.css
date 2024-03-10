@@ -1,0 +1,59 @@
+.background{
+    margin-right: 50px;
+}
+.container{
+    background-color: white;
+    display: flex;
+    padding: 35px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+h1{
+    text-align: center;
+    color:white;
+    margin-bottom: 25px;
+    margin-top: 25px;;
+}
+.background{
+    background-size: 100vw 100vh;
+}
+#add-btn{
+    margin-left: 50px;
+}
+#success{
+    width: 30%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+    background-color:rgb(35, 199, 35) ;
+}
+#error{
+    width: 30%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+    background-color: red;
+}
+
+/* #search{
+    position: absolute;
+    right: 0;
+} */
+
+i{
+  background-color: white; 
+  padding: 0.3em 0.3em;
+}

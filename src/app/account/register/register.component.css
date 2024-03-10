@@ -1,0 +1,49 @@
+@import '../../../styles.css';
+
+form {
+    width: 40%;
+    background-color: #f5f5f5;
+    padding: 20px 20px 20px 20px;
+
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width:320px) {
+    form {
+        width: 95%;
+    }
+}
+@media (min-width:769px) {
+    form {
+        width: 50%;
+    }
+}
+
+.decision-icon-style {
+    padding: 5px 5px 5px 5px;
+}
+
+
+
+.btn-style {
+    margin: 10px 10px 10px 10px;
+}
+
+#show-confirm-password {
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+#show-password {
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+input[type="number"] {
+    appearance: textfield;
+}

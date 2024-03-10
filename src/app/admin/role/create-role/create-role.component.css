@@ -1,0 +1,39 @@
+@import '/src/styles.css';
+
+.create-role-container {
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 45px;
+}
+
+.mat-card {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    border: 1px;
+    padding: 3%;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+
+}
+
+.card-head-foot {
+    padding-left: 30%;
+}
+
+.btn {
+    margin: 0 10px;
+}
+
+.center-error {
+    text-align: center;
+    color: red;
+}

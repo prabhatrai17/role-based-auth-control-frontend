@@ -1,0 +1,53 @@
+<div class="container view-employee-cotainer">
+    <div class="title-style">Edit Employee</div>
+    <div class="container">
+        <div class="employee-details">
+            <div class="row">
+                <div class="title-style">Employee details</div>
+                <div class="col">
+                    <label class="col-form-label"><b>User ID</b></label>
+                    <span class="form-control">{{userData?.userId}}</span>
+                </div>
+
+                <div class="col">
+                    <label class="col-form-label"><b>User name</b></label>
+                    <span class="form-control">{{userData?.username}}</span>
+                </div>
+                <div class="col">
+                    <label class="col-form-label"><b>Email</b></label>
+                    <span class="form-control">{{userData?.email}}</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div *ngIf="userData.profile !== null" class="profiledetails">
+            <div class="title-style">Profile Details</div>
+            <div class="profile-details-style" >
+                <div class="col">
+                    <label class="col-form-label"><b>Profile name</b></label>
+                    <div class="col-form-label">{{userData.profile.profileName}} </div>
+                </div>
+                <div class="col">
+                    <label class="col-form-label"><b>Profile decription</b></label>
+                    <div class="col-form-label">{{userData.profile.profileDescription}} </div>
+                </div>
+            </div>
+            <div class="title-style">Role Details</div>
+            <app-data-table [rowSelectEnable]="false" [columns]="rolesColumns" [pData]="rolesData"></app-data-table>
+        </div>
+        <div class="view-page-button-container">
+            <div class="button-position">
+                <button class="btn view-button-style  btn-primary" (click)="buttonClick('redirect')">Go back</button>
+
+            </div>
+            <div class="button-position">
+                <button class="btn view-button-style  btn-primary" (click)="buttonClick('edit')">Edit</button>
+
+            </div>
+            <div class="button-position ">
+                <button class="btn view-button-style  btn-danger" (click)="buttonClick('delete')">Delete</button>
+            </div>
+
+        </div>
+    </div>
+</div>

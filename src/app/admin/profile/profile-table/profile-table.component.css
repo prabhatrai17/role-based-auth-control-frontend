@@ -1,0 +1,14 @@
+@import '/src/styles.css';
+
+.profile-table-container {
+    padding: 3rem;
+}
+
+.create-role {
+    float: right;
+}
+
+.title-style {
+    text-align: left;
+    padding-bottom: 10px;
+}
